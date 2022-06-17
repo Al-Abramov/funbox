@@ -1,0 +1,12 @@
+@use '../../../../scss/mixins.scss' as *;
+@use '../../../../scss/variables.scss' as *; 
+
+.subttl {
+  @include text(13px, $light-title);
+}
+
+.buyTxt {
+  text-decoration: underline dashed;
+  cursor: pointer;
+  @include text(13px, $default);
+}
