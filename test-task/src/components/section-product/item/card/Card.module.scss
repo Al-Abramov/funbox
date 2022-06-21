@@ -1,10 +1,166 @@
-@use '../../../../scss/variables.scss' as *; 
+@use '../../../../scss/variables.scss' as *;
+@use '../../../../scss/mixins.scss' as *;
 
 .card {
+  position: relative;
   width: 320px;
-  height: 480px;
-  border: 4px solid $default;
-  background: $light-title url(../../../../assets/img/Photo.png) 50% 100% no-repeat;
-  border-radius: 12px;
+  cursor: pointer;
   margin-bottom: 14px;
+}
+
+.cardTop {
+  width: 270px;
+  height: 240px;
+  background: #fff;
+  margin-left: 50px;
+  border-top: 4px solid $default;
+  border-right: 4px solid $default;
+  border-radius: 0 12px 0 0;
+  padding-top: 20px;
+}
+
+.cardTop::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 46px;
+  background: #FFF;
+  left: 0;
+  transform-origin: right;
+  transform: skewY(-45deg);
+
+  height: 240px;
+  border-left: 4px solid $default;
+  border-top: 4px solid $default;
+}
+
+.cardBottom {
+  height: 240px;
+  display: flex;
+  justify-content: flex-end;
+  background: #FFF url('../../../../assets/img/Photo.png') 0% 100% no-repeat;
+  background-size: 90%;
+  padding: 10px;
+  border-left: 4px solid $default;
+  border-bottom: 4px solid $default;
+  border-right: 4px solid $default;
+  border-radius: 0 0 12px 12px;
+}
+
+.cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 480px;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 12px;
+  clip-path: polygon(15% 0, 100% 0, 100% 100%, 0 100%, 0 10%);
+  z-index: 100;
+}
+
+.cover::after {
+  content: "";
+  width: 4px;
+  height: 67px;
+  background-color: rgba(255, 255, 255, 0.7);;
+  position: absolute;
+  transform: rotate(45deg);
+  top: -13px;
+  left: 20px;
+}
+
+.circle {
+  width: 80px;
+  height: 80px;
+  flex-direction: column;
+  line-height: 22px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: $default;
+  display: flex;
+  align-self: flex-end;
+  font-size: 22px;
+  line-height: 1;
+  color: #fff;
+}
+
+.weight {
+  font-size: 42px;
+}
+
+.endProduct {
+  & .cardTop {
+    border-top: 4px solid $description;
+    border-right: 4px solid $description;
+    cursor: auto;
+  }
+
+  & .cardBottom {
+    border-left: 4px solid $description;
+    border-bottom: 4px solid $description;
+    border-right: 4px solid $description;
+  }
+
+  .cardTop::before {
+    border-left: 4px solid $description;
+    border-top: 4px solid $description;
+  }
+
+  &.card::after {
+    background-color: $description;
+  }
+
+  & .circle {
+    background-color: $description;
+  }
+}
+
+.contentDescr {
+  font-size: 16px;
+}
+
+.notice {
+  display: none;
+  color: $selected;
+}
+
+.active {
+  & .cardTop {
+    border-top: 4px solid $selected;
+    border-right: 4px solid $selected;
+  }
+
+  & .cardBottom {
+    border-left: 4px solid $selected;
+    border-bottom: 4px solid $selected;
+    border-right: 4px solid $selected;
+  }
+
+  & .cardTop::before {
+    border-left: 4px solid $selected;
+    border-top: 4px solid $selected;
+  }
+
+  & .circle {
+    background-color: $selected;
+  }
+}
+
+.active:hover .contentDescr{
+  display: none;
+}
+
+.active:hover .notice{
+  display: initial;
+}
+
+.active:focus .notice{
+  display: none;
+}
+
+.active:focus .contentDescr{
+  display: initial;
 }

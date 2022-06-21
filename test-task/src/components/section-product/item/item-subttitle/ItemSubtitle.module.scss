@@ -10,3 +10,7 @@
   cursor: pointer;
   @include text(13px, $default);
 }
+
+.endedText{
+  @include text(13px, $ended-text);
+}

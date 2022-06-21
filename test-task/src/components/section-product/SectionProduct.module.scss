@@ -21,11 +21,6 @@
   padding: 24px 0;
 }
 
-.cardContainer:not(:last-child) {
-  margin-right: 20px;
-}
-
-
 @media (max-width: 1160px) {
   .cardsWrapper {
     justify-content: center;
