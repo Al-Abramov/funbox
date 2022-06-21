@@ -24,7 +24,7 @@
   position: absolute;
   top: 0;
   bottom: 0;
-  width: 46px;
+  width: 47px;
   background: #FFF;
   left: 0;
   transform-origin: right;
@@ -46,6 +46,7 @@
   border-bottom: 4px solid $default;
   border-right: 4px solid $default;
   border-radius: 0 0 12px 12px;
+  margin-top: -1px;
 }
 
 .cover {
