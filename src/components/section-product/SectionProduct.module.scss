@@ -21,6 +21,23 @@
   padding: 24px 0;
 }
 
+.test1 {
+  width: 320px;
+  height: 480px;
+  background: linear-gradient(135deg, transparent 30px, #1698d9 30px);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.test2 {
+  background: url('../../assets/img/Photo.png') 0% 100% no-repeat, linear-gradient(135deg, transparent 29px, #fff 29px);
+  height: 472px;
+  border-radius: 10px;
+  width: 312px;
+}
+
 @media (max-width: 1160px) {
   .cardsWrapper {
     justify-content: center;
