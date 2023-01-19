@@ -1,0 +1,12 @@
+.container {
+  flex-wrap: wrap;
+  padding: 24px 0;
+}
+
+@media (max-width: 1160px) {
+  .container {
+    justify-content: center;
+    column-gap: 50px;
+    gap: 40px;
+  }
+}

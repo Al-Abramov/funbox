@@ -1,29 +1,25 @@
 import { data } from '../../data';
 import { normalizeData } from '../../utils/normalizeData';
-import { Item } from './item/Item';
 import style from './SectionProduct.module.scss';
-import { Title } from './title/Title';
+import Title from '../title/Title';
+import CardsContainer from './components/cards-container';
+import LayoutFlex from '../layout-flex';
+import { useEffect, useState } from 'react';
+import { DataInterface } from '../../data/data.interface';
 
 export const SectionProduct = () => {
-  normalizeData(data);
+  const [cards, setCards] = useState<DataInterface[]>([]);
+
+  useEffect(() => {
+    setCards(normalizeData(data));
+  }, []);
+
   return (
-    <section className={style.products}>
-      <div className={style.container}>
-        <Title />
-        <div className={style.cardsWrapper}>
-          {data.map((card) => (
-            <Item
-              key={card.id}
-              weight={card.weight}
-              count={card.count}
-              portionCount={card.portionCount}
-              promo={card.promo}
-              filling={card.filling}
-              activeDescr={card.activeDescription}
-            />
-          ))}
-        </div>
-      </div>
-    </section>
+    <LayoutFlex flex="center" class={style.products}>
+      <LayoutFlex flex="start" class={style.wrapper}>
+        <Title text="Ты сегодня покормил кота?" />
+        <CardsContainer data={cards} />
+      </LayoutFlex>
+    </LayoutFlex>
   );
 };

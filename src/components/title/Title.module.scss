@@ -1,4 +1,4 @@
-@use '../../../scss/variables.scss' as *; 
+@use '../../scss/variables.scss' as *; 
 
 .title {
   color: $light-title;
@@ -6,4 +6,8 @@
   font-size: 36px;
   text-align: center;
   text-shadow: 0px 1px 1px #000000;
+}
+
+.titleContainer {
+  
 }

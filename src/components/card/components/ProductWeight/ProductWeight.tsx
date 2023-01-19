@@ -1,5 +1,6 @@
-import { ItemsProps } from '../../interface/ItemsProps';
-import style from '../Card.module.scss';
+import React from 'react';
+import { ItemsProps } from '../../../section-product/components/item/interface/ItemsProps';
+import style from '../../Card.module.scss';
 
 export const ProductWeight: React.FC<Partial<ItemsProps>> = (props) => {
   return (
@@ -9,3 +10,5 @@ export const ProductWeight: React.FC<Partial<ItemsProps>> = (props) => {
     </div>
   );
 };
+
+export default React.memo(ProductWeight);

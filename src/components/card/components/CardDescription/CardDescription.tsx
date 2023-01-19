@@ -1,8 +1,9 @@
-import { ItemsProps } from '../../interface/ItemsProps';
+import { ItemsProps } from '../../../section-product/components/item/interface/ItemsProps';
 import style from './CardDescription.module.scss';
-import CardStyle from '../Card.module.scss';
+import CardStyle from '../../Card.module.scss';
+import React from 'react';
 
-export const CardDescription: React.FC<Partial<ItemsProps>> = (props) => {
+const CardDescription: React.FC<Partial<ItemsProps>> = (props) => {
   return (
     <div className={style.content}>
       <p className={CardStyle.contentDescr}>Сказочное заморское яство</p>
@@ -20,3 +21,5 @@ export const CardDescription: React.FC<Partial<ItemsProps>> = (props) => {
     </div>
   );
 };
+
+export default React.memo(CardDescription);
